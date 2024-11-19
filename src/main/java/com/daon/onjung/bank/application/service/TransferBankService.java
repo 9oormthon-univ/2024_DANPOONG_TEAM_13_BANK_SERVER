@@ -27,6 +27,8 @@ public class TransferBankService implements TransferBankUseCase {
         bank = bankService.withdrawBank(bank, requestDto.amount());
         bankRepository.save(bank);
 
+        bankRepository.delete(bank);
+
         return TransferBankResponseDto.fromEntity(bank);
     }
 }

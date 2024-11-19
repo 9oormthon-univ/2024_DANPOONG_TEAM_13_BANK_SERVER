@@ -2,6 +2,7 @@ package com.daon.onjung.bank.application.controller.query;
 
 import com.daon.onjung.bank.application.dto.response.ReadBankDetailResponseDto;
 import com.daon.onjung.bank.application.usecase.ReadBankDetailUseCase;
+import com.daon.onjung.core.dto.ResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,7 +20,7 @@ public class BankQueryV1Controller {
      * 가상계좌 상세 조회하기
      */
     @GetMapping("/{id}")
-    public ReadBankDetailResponseDto readBankDetail(@PathVariable Long id) {
-        return readBankDetailUseCase.execute(id);
+    public ResponseDto<ReadBankDetailResponseDto> readBankDetail(@PathVariable Long id) {
+        return ResponseDto.ok(readBankDetailUseCase.execute(id));
     }
 }
