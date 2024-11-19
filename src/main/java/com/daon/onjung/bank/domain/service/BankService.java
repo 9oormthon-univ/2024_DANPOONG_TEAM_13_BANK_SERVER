@@ -11,6 +11,10 @@ public class BankService {
                 .eventId(eventId)
                 .bankNumber(bankNumber)
                 .build();
+    }
 
+    public Bank depositBank(Bank bank, Integer amount) {
+        bank.updateBalance(bank.getBalance() + amount);
+        return bank;
     }
 }
