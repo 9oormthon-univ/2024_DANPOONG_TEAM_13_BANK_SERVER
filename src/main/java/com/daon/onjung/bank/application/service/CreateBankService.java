@@ -31,7 +31,7 @@ public class CreateBankService implements CreateBankUseCase {
         }
 
         // Bank 생성
-        Bank bank = bankService.createBank(requestDto.eventId(), accountNumber.toString());
+        Bank bank = bankService.createKAKAOBank(requestDto.eventId(), accountNumber.toString());
         bankRepository.save(bank);
 
         return CreateBankResopnseDto.fromEntity(bank);
