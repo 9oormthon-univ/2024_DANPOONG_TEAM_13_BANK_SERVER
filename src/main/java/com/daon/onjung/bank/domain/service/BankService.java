@@ -17,4 +17,9 @@ public class BankService {
         bank.updateBalance(bank.getBalance() + amount);
         return bank;
     }
+
+    public Bank withdrawBank(Bank bank, Integer amount) {
+        bank.updateBalance(bank.getBalance() - amount);
+        return bank;
+    }
 }
