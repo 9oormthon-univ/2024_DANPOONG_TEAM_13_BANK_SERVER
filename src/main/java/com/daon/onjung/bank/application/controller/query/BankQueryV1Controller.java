@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/v1/banks")
+@RequestMapping("/bank/v1/banks")
 public class BankQueryV1Controller {
 
     private final ReadBankDetailUseCase readBankDetailUseCase;

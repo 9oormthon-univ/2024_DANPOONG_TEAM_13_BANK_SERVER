@@ -24,6 +24,9 @@ public class Bank {
     @Column(name = "event_id", nullable = false)
     private Long eventId;
 
+    @Column(name = "bank_name", length = 20, nullable = false)
+    private String bankName;
+
     @Column(name = "bank_number", length = 20, nullable = false)
     private String bankNumber;
 
@@ -31,8 +34,9 @@ public class Bank {
     private Integer balance;
 
     @Builder
-    public Bank(Long eventId, String bankNumber) {
+    public Bank(Long eventId, String bankName, String bankNumber) {
         this.eventId = eventId;
+        this.bankName = bankName;
         this.bankNumber = bankNumber;
         this.balance = 0;
     }

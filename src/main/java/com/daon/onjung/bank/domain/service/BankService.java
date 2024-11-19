@@ -6,9 +6,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class BankService {
 
-    public Bank createBank(Long eventId, String bankNumber) {
+    public Bank createKAKAOBank(Long eventId, String bankNumber) {
         return Bank.builder()
                 .eventId(eventId)
+                .bankName("KAKAO")
                 .bankNumber(bankNumber)
                 .build();
     }
